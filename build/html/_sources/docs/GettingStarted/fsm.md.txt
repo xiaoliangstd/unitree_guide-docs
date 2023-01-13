@@ -16,3 +16,12 @@ Trotting gait, when the robot will walk using a Trotting gait.
 Navigation and obstacle avoidance mode, the robot will move according to the commands issued by ROS move_base.
 
 ## Switch
+![Switch](../../images/fsmSwitch.png)
+<center>
+<br>
+<div style="color:orange; border-bottom: 0.1px solid #d9d9d9;
+display: inline-block;
+color: #999;
+padding: 1px;">Switch</div>
+</center>
+<br>
