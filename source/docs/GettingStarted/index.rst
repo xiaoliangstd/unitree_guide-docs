@@ -1,8 +1,8 @@
-Installation
+Getting Started
 ==========================================
 
 .. toctree::
    :maxdepth: 1
 
-   Installation.md
+   fsm.md
    

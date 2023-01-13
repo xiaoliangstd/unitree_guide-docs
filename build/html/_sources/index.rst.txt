@@ -6,7 +6,8 @@
 Welcome to unitree_guide documentation!
 ===========================================
 
-Content
+
+Table of Contents
 ==========================================
 
 .. toctree::
@@ -14,5 +15,6 @@ Content
 
    docs/Overview/index.rst
    docs/Installation/index.rst
+   docs/GettingStarted/index.rst
 
    
