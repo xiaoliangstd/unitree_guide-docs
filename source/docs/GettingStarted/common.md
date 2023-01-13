@@ -11,13 +11,13 @@ padding: 1px;">A1 Robot Hardware interface</div>
 </center>
 <br>
 
-![Go1_hardware_interface](../../images/Go1_hardware_interface.png)
+![Go1 Robot Hardware interface](../../images/Go1_hardware_interface.png)
 <center>
 <br>
 <div style="color:orange; border-bottom: 0.1px solid #d9d9d9;
 display: inline-block;
 color: #999;
-padding: 1px;">Go1_hardware_interface</div>
+padding: 1px;">Go1 Robot Hardware interface</div>
 </center>
 <br>
 

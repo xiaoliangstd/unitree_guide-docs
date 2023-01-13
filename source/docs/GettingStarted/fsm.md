@@ -22,6 +22,6 @@ Navigation and obstacle avoidance mode, the robot will move according to the com
 <div style="color:orange; border-bottom: 0.1px solid #d9d9d9;
 display: inline-block;
 color: #999;
-padding: 1px;">Switch</div>
+padding: 1px;">FSM framework</div>
 </center>
 <br>

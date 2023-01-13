@@ -5,4 +5,4 @@ Installation
    :maxdepth: 1
 
    Installation.md
-   
+   Anomalies.md

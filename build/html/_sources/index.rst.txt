@@ -5,6 +5,8 @@
 
 Welcome to unitree_guide documentation!
 ===========================================
+The unitree_guide project is the open source software framework.This document will give you some details and help you get started with unitree_guide.
+
 .. note::
 
    Copyright (c) 2020-2023, Unitree Robotics.Co.Ltd. All rights reserved.
