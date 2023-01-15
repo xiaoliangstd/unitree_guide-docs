@@ -9,4 +9,63 @@ For example, to facilitate our debugging of the motion of the robot's legs
 we add the state \lstinline{SwingTest}.
 The reader can see the code under the **src/FSM/State_SwingTest.cpp** file.
 to see the relevant code.
-##
+
+In the state **SwingTest**, after obtaining the target position of the right front leg
+you can use the function `_positionCtrl` to calculate the target angle of each joint.
+The function `_torqueCtrl` is used to calculate the target force at the foot end.
+The target moment of each joint is obtained.
+
+## Robot kinematics and hydrostatic calculations
+In the sample code, we abstract the robot's legs into a class.and abstract the calculations related to the robot's kinematics and statics as member functions of this class.
+Open the file **include/common/unitreeLeg.h** .
+We can see the class `QuadrupedLeg`, which is a three DOF mechanical leg of the robot.
+We will explain each of its member functions separately.
+1. `QuadrupedLeg`: constructor of class QuadrupedLeg,The parameter `legID` is the leg number.The last `pHip2B` represents the length from the center of the body
+to the origin of that leg base coordinate system 0 as a vector.
+
+2. `calcPEe2H(q)`: 
+
+3. `calcPEe2B(q)`: 
+
+4. `calcVEe(q, qd)`: 
+
+5. `calcQ(pEe, frame)`: 
+
+6. `calcQd(q, vEe)`: 
+
+7. `calcQd(pEe, vEe, frame)`: 
+
+8. `calcTau(q, force)`: 
+
+9. `calcJaco(q)`: 
+
+
+## Experimentation on simulation and real machines
+The state **SwingTest** can only be accessed from the
+state **FixedStand**.
+So you need to press the **"2"** key on the keyboard or the **"L2+A"** key combination on the joystick first
+to enter the **FixedStand** state.
+Then press **"9"** on the keyboard or **"L1+A"** on the joystick
+Enter the SwingTest state.<br>
+
+Note that we would like to see the motion of the right front leg in the vacant state.
+So in the simulation we also want to test the robot suspended.
+The way to achieve this is to assign the parameter `user_debug`
+to `true`.
+~~~
+ roslaunch unitree_guide gazeboSim.launch user_debug:=true
+~~~
+In our previous simulation, the value of `user_debug` was not modified.
+So its default has been false, when the robot can move in the simulation space.
+And when we assign `user_debug` to `true`, the
+the robot will hang in the initial position, thus making it easier for us to observe the movement of the legs.
+It is also desirable to hang the robot for experiments when running on the real machine.
+![Switch](../../images/Practice/hangon.png)
+<center>
+<br>
+<div style="color:orange; border-bottom: 0.1px solid #d9d9d9;
+display: inline-block;
+color: #999;
+padding: 1px;"> the robot will be hung on When user_debug is set to true,</div>
+</center>
+<br>
