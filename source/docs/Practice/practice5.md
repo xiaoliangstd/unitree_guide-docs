@@ -24,21 +24,27 @@ We will explain each of its member functions separately.
 to the origin of that leg base coordinate system 0 as a vector.
 
 2. `calcPEe2H(q)`: 
+ With reference to equation (5.11), the calculate when each of the three joint angles is q the vector coordinates of the foot end to the origin of the base coordinate system 0.
 
 3. `calcPEe2B(q)`: 
+Calculate when each of the three joint angles is q the vector coordinates from the foot end to the center of the body.
 
 4. `calcVEe(q, qd)`: 
+With reference to equation (5.42), the Calculate when the joint angle is q, the the angular velocity of the joint is qd, the The velocity vector of the foot end.
 
 5. `calcQ(pEe, frame)`: 
+Referring to the inverse kinematics in section 5.2, the Calculate when the coordinates of the foot end are `pEe` the angles of the three joints on the leg, and \lstinline{frame denotes the coordinate system in which the coordinates `pEe` can be `FrameType::HIP` or `FrameType::BODY`, representing the base coordinate system 0 and the fuselage coordinate system 0, respectively.and the fuselage coordinate system.
 
 6. `calcQd(q, vEe)`: 
+With reference to equation (5.43) Calculate the angles and foot-end velocities of the three joints on the current leg based on the the angular velocities of the three joints.
 
 7. `calcQd(pEe, vEe, frame)`: 
+Based on the position coordinates of the foot end in the frame coordinate system `pEe` and the velocity `vEe` to calculate the angular velocities of the three joints.It can be considered as a fusion of the functions `calcQd(q, vEe)` and function `calcQ(pEe, frame)`.
 
 8. `calcTau(q, force)`: 
-
+Referring to equation (5.46), the Calculated when the angle of the three joints of the leg is q and the external force at the end of the foot is force. The moment of the three joints of the leg.
 9. `calcJaco(q)`: 
-
+With reference to equation (5.42), the calculate when each of the three joint angles is q the Jacobi matrix of this leg.
 
 ## Experimentation on simulation and real machines
 The state **SwingTest** can only be accessed from the
