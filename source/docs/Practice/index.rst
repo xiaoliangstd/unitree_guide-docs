@@ -6,5 +6,6 @@ Practice
 
    practice3.md
    practice5.md
+   practice6.md
 
    
