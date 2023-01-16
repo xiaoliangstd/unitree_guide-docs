@@ -71,7 +71,7 @@ Considering that there is no ROS and Python on the UP Board of the A1 robot.we c
 About the PLATFORM variable.
 It indicates the architecture of the computer, for example, the 64-bit personal computer we commonly use is the **amd64** architecture.The UP Board on A1 is also **amd64** architecture.The control computer of Go1 is Raspberry Pi, which is **arm64** architecture.<br>
 After completing the changes to the CMakeLists.txt file. Use the scp function described in above section. Send the unitree_guide folder to the Home directory of the robot's onboard computer. For the UP Board of the A1 robot, this Home directory is /home/unitree. For the Go1 robot's Raspberry Pi it is /home/pi.Of course, the reader can also copy the unitree_guide folder to the Home directory manually using a USB stick.<br>
-Open an terminal and move the path to the unitree_guide folder. Then create two folders, build and bin.
+Then open an terminal and move the path to the unitree_guide folder. Then use `mkdir` command to create two folders, build and bin.
 ```
  mkdir build bin        
 ```
