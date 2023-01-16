@@ -1,4 +1,4 @@
-# Practice3: Control real robots and configure networks
+# Experiment3: Control real robots and configure networks
 ## Control program of the robot
 &emsp;We take the motion mode of the A1 robot as an example to explain how the robot's control program controls the robot.
 From [A1 Robot network architecture](../GettingStarted/common.md),we can see that the robot's motion mode program runs on the UP Board.

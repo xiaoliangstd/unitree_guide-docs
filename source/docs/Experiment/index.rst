@@ -1,11 +1,11 @@
-Practice
+Experiment
 ==========================================
 
 .. toctree::
    :maxdepth: 1
 
-   practice3.md
-   practice5.md
-   practice6.md
+   Experiment3.md
+   Experiment5.md
+   Experiment6.md
 
    

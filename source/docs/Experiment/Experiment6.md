@@ -1,4 +1,4 @@
-# Practice6: orientation control of robot in stance
+# Experiment6: orientation control of robot in stance
 In this practice, we will complete the FreeStand state.In FixedStand state, you need to press **"3"** key on the keyboard or the **"L2+X"** key combination on the handle to enter the FreeStand state. We can use the keyboard or the joystick to change the position and orientation of robot in this state. We use **WASD** key to simulate the left stick of joystick, and **IJKL** key to simulate the right stick. Meanwhile, the spacebar represents returning the value of the left and right joysticks to 0.
 
 ![FreeStand](../../images/Practice/freeStand.gif)
