@@ -26,6 +26,15 @@ padding: 1px;">FixedStand</div>
 
 ### FreeStand
 Free standing, where the robot remains standing but can change its stance and height based on commands from the joystick or keyboard.
+![FreeStand](../../images/Practice/freeStand.gif)
+<center>
+<br>
+<div style="color:orange; border-bottom: 0.1px solid #d9d9d9;
+display: inline-block;
+color: #999;
+padding: 1px;">FreeStand</div>
+</center>
+<br>
 
 ### Trotting 
 Trotting gait, when the robot will walk using a Trotting gait.
