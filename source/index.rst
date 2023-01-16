@@ -18,8 +18,8 @@ Table of Contents
    :maxdepth: 4
 
    docs/Overview/index.rst
-   docs/Installation/index.rst
    docs/GettingStarted/index.rst
+   docs/Installation/index.rst
    docs/Practice/index.rst
 
    

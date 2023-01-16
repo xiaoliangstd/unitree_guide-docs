@@ -38,7 +38,7 @@ padding: 1px;">FreeStand</div>
 
 ### Trotting 
 Trotting gait, when the robot will walk using a Trotting gait.
-![Switch](../../images/gif/troting.gif)
+![Switch](../../images/gif/trot_new.gif)
 <center>
 <br>
 <div style="color:orange; border-bottom: 0.1px solid #d9d9d9;

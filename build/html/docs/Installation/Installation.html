@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dependencies &mdash; unitree_guide  documentation</title><link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <title>Installation &mdash; unitree_guide  documentation</title><link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
@@ -37,12 +37,16 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../Overview/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GettingStarted/index.html">Getting Started</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Installation</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Dependencies</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dependencies">Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cmakelists-txt">CMakeLists.txt</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="Anomalies.html">Anomalies</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../GettingStarted/index.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Practice/index.html">Practice</a></li>
 </ul>
 
@@ -61,7 +65,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html">Installation</a> &raquo;</li>
-      <li>Dependencies</li>
+      <li>Installation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/docs/Installation/Installation.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -71,12 +75,42 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="dependencies">
-<h1>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
+<li><a class="reference external" href="https://github.com/unitreerobotics/unitree_guide">unitree_guide</a></li>
 <li><a class="reference external" href="https://github.com/unitreerobotics/unitree_ros">unitree_ros</a></li>
 <li><a class="reference external" href="https://github.com/unitreerobotics/unitree_ros_to_real">unitree_ros_to_real</a></li>
 </ol>
+<p><img alt="Switch" src="../../_images/download_pkg.png" /></p>
+<center>
+<br>
+<div style="color:orange; border-bottom: 0.1px solid #d9d9d9;
+display: inline-block;
+color: #999;
+padding: 1px;">All the packages you need to prepare</div>
+</center>
+<br></div>
+<div class="section" id="cmakelists-txt">
+<h2>CMakeLists.txt<a class="headerlink" href="#cmakelists-txt" title="Permalink to this headline">¶</a></h2>
+<p>Since our program needs to support many uncertain scenarios.
+For example, both A1 robots and Go1 robots need to be supported.both compiling under ROS and compiling without relying on ROS, etc. To easily switch between these requirements, we need to rely on conditional compilation.
+We can get the compiler to compile what we want with a simple setup.<br>
+Next, let’s see how to implement conditional compilation in CMake. The settings for CMake compilation are all in the
+<strong>unitree_guide/CMakeLists.txt</strong> file.
+Open this file and at the beginning is the file used to configure conditional compilation.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="nb">set</span><span class="p">(</span><span class="n">ROBOT_TYPE</span> <span class="n">Go1</span><span class="p">)</span>        <span class="c1"># Robot models, currently supporting Go1 and A1</span>
+    <span class="nb">set</span><span class="p">(</span><span class="n">PLATFORM</span> <span class="n">amd64</span><span class="p">)</span>        <span class="c1"># Program compilation platform, currently supports amd64 and arm64</span>
+    <span class="nb">set</span><span class="p">(</span><span class="n">CATKIN_MAKE</span> <span class="n">ON</span><span class="p">)</span>        <span class="c1"># Whether to use ROS&#39;s catkin_make, ON or OFF</span>
+    <span class="nb">set</span><span class="p">(</span><span class="n">SIMULATION</span> <span class="n">ON</span><span class="p">)</span>         <span class="c1"># For Gazebo simulation environment, ON or OFF</span>
+    <span class="nb">set</span><span class="p">(</span><span class="n">REAL_ROBOT</span> <span class="n">OFF</span><span class="p">)</span>        <span class="c1"># For real robot control, ON or OFF, must be different from the previous one</span>
+    <span class="nb">set</span><span class="p">(</span><span class="n">DEBUG</span> <span class="n">ON</span><span class="p">)</span>              <span class="c1"># Whether to turn on Debug debugging, ON or OFF</span>
+    <span class="nb">set</span><span class="p">(</span><span class="n">MOVE_BASE</span> <span class="n">ON</span><span class="p">)</span>          <span class="c1"># Whether to turn on the move_base navigation function, ON or OFF</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
