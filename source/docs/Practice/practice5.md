@@ -1,4 +1,4 @@
-# Practice5: Let the legs moving
+# Practice5: Let the legs moving 
 The control of a quadruped robot is a combination of many sub-control systems.
 So when there is a problem with the robot algorithm, or when parameters need to be adjusted
 we often have no way to do so. This is because it is difficult to determine the source of the problem.
