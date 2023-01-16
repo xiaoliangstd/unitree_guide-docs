@@ -48,6 +48,16 @@ padding: 1px;">Trotting</div>
 </center>
 <br>
 
+![Switch](../../images/gif/crawl.gif)
+<center>
+<br>
+<div style="color:orange; border-bottom: 0.1px solid #d9d9d9;
+display: inline-block;
+color: #999;
+padding: 1px;">crawl</div>
+</center>
+<br>
+
 ### move_base
 Navigation and obstacle avoidance mode, the robot will move according to the commands issued by ROS move_base.
 
