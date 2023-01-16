@@ -92,28 +92,24 @@
 <div style="color:orange; border-bottom: 0.1px solid #d9d9d9;
 display: inline-block;
 color: #999;
-padding: 1px;">All the packages you need to prepare</div>
+padding: 1px;">All the packages that you need to prepare in ros workspace</div>
 </center>
 <br></div>
 <div class="section" id="cmakelists-txt">
 <h2>CMakeLists.txt<a class="headerlink" href="#cmakelists-txt" title="Permalink to this headline">¶</a></h2>
-<p>Since our program needs to support many uncertain scenarios.
-For example, both A1 robots and Go1 robots need to be supported.both compiling under ROS and compiling without relying on ROS, etc. To easily switch between these requirements, we need to rely on conditional compilation.
-We can get the compiler to compile what we want with a simple setup.<br>
-Next, let’s see how to implement conditional compilation in CMake. The settings for CMake compilation are all in the
-<strong>unitree_guide/CMakeLists.txt</strong> file.
-Open this file and at the beginning is the file used to configure conditional compilation.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="nb">set</span><span class="p">(</span><span class="n">ROBOT_TYPE</span> <span class="n">Go1</span><span class="p">)</span>        <span class="c1"># Robot models, currently supporting Go1 and A1</span>
-    <span class="nb">set</span><span class="p">(</span><span class="n">PLATFORM</span> <span class="n">amd64</span><span class="p">)</span>        <span class="c1"># Program compilation platform, currently supports amd64 and arm64</span>
-    <span class="nb">set</span><span class="p">(</span><span class="n">CATKIN_MAKE</span> <span class="n">ON</span><span class="p">)</span>        <span class="c1"># Whether to use ROS&#39;s catkin_make, ON or OFF</span>
-    <span class="nb">set</span><span class="p">(</span><span class="n">SIMULATION</span> <span class="n">ON</span><span class="p">)</span>         <span class="c1"># For Gazebo simulation environment, ON or OFF</span>
-    <span class="nb">set</span><span class="p">(</span><span class="n">REAL_ROBOT</span> <span class="n">OFF</span><span class="p">)</span>        <span class="c1"># For real robot control, ON or OFF, must be different from the previous one</span>
-    <span class="nb">set</span><span class="p">(</span><span class="n">DEBUG</span> <span class="n">ON</span><span class="p">)</span>              <span class="c1"># Whether to turn on Debug debugging, ON or OFF</span>
+<p>Since our program needs to support many uncertain scenarios. <code class="docutils literal notranslate"><span class="pre">todo:</span></code> For example, both A1 robots and Go1 robots need to be supported.both compiling under ROS and compiling without relying on ROS, etc. <code class="docutils literal notranslate"><span class="pre">todo:</span></code> To easily switch between these requirements, we need to rely on conditional compilation. We can let the compiler to compile what we want with a simple setup.<br>
+Next, let’s see how to implement conditional compilation in CMake. The settings for CMake compilation are all in the <strong>unitree_guide/CMakeLists.txt</strong> file.The settings used to configure conditional compilation is at the beginning of that file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="nb">set</span><span class="p">(</span><span class="n">ROBOT_TYPE</span> <span class="n">Go1</span><span class="p">)</span>        <span class="c1"># Robot model,  supporting Go1 and A1</span>
+    <span class="nb">set</span><span class="p">(</span><span class="n">PLATFORM</span> <span class="n">amd64</span><span class="p">)</span>        <span class="c1"># Program compilation platform, supporting amd64 and arm64</span>
+    <span class="nb">set</span><span class="p">(</span><span class="n">CATKIN_MAKE</span> <span class="n">ON</span><span class="p">)</span>        <span class="c1"># Whether to use catkin_make, ON or OFF</span>
+    <span class="nb">set</span><span class="p">(</span><span class="n">SIMULATION</span> <span class="n">ON</span><span class="p">)</span>         <span class="c1"># For Gazebo simulation, ON or OFF</span>
+    <span class="nb">set</span><span class="p">(</span><span class="n">REAL_ROBOT</span> <span class="n">OFF</span><span class="p">)</span>        <span class="c1"># For real robot control, ON or OFF,it must be different from the previous one</span>
+    <span class="nb">set</span><span class="p">(</span><span class="n">DEBUG</span> <span class="n">ON</span><span class="p">)</span>              <span class="c1"># Whether to turn on Debug mode, ON or OFF</span>
     <span class="nb">set</span><span class="p">(</span><span class="n">MOVE_BASE</span> <span class="n">ON</span><span class="p">)</span>          <span class="c1"># Whether to turn on the move_base navigation function, ON or OFF</span>
 </pre></div>
 </div>
 <p>The first line of the above code can be thought of as assigning the variable <code class="docutils literal notranslate"><span class="pre">ROBOT_TYPE</span></code> to the string <code class="docutils literal notranslate"><span class="pre">&quot;Go1&quot;</span></code>.
-The third line can be thought of as assigning the variable <code class="docutils literal notranslate"><span class="pre">CATKIN_MAKE</span></code> to the Boolean quantity <code class="docutils literal notranslate"><span class="pre">true</span></code>, the <code class="docutils literal notranslate"><span class="pre">OFF</span></code> corresponds to the boolean <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+The third line can be thought of as assigning the variable <code class="docutils literal notranslate"><span class="pre">CATKIN_MAKE</span></code> to the boolean <code class="docutils literal notranslate"><span class="pre">true</span></code>, the <code class="docutils literal notranslate"><span class="pre">OFF</span></code> corresponds to the boolean <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 </div>
 <div class="section" id="build-code-and-run-in-gazebo">
 <h2>Build code and run in Gazebo<a class="headerlink" href="#build-code-and-run-in-gazebo" title="Permalink to this headline">¶</a></h2>

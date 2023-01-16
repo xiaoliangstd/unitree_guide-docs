@@ -10,28 +10,24 @@
 <div style="color:orange; border-bottom: 0.1px solid #d9d9d9;
 display: inline-block;
 color: #999;
-padding: 1px;">All the packages you need to prepare</div>
+padding: 1px;">All the packages that you need to prepare in ros workspace</div>
 </center>
 <br>
 
 ## CMakeLists.txt
-Since our program needs to support many uncertain scenarios.
-For example, both A1 robots and Go1 robots need to be supported.both compiling under ROS and compiling without relying on ROS, etc. To easily switch between these requirements, we need to rely on conditional compilation.
-We can get the compiler to compile what we want with a simple setup.<br>
-Next, let's see how to implement conditional compilation in CMake. The settings for CMake compilation are all in the
-**unitree_guide/CMakeLists.txt** file.
-Open this file and at the beginning is the file used to configure conditional compilation.
+Since our program needs to support many uncertain scenarios. `todo:` For example, both A1 robots and Go1 robots need to be supported.both compiling under ROS and compiling without relying on ROS, etc. `todo:` To easily switch between these requirements, we need to rely on conditional compilation. We can let the compiler to compile what we want with a simple setup.<br>
+Next, let's see how to implement conditional compilation in CMake. The settings for CMake compilation are all in the **unitree_guide/CMakeLists.txt** file.The settings used to configure conditional compilation is at the beginning of that file.
 ```
-    set(ROBOT_TYPE Go1)        # Robot models, currently supporting Go1 and A1
-    set(PLATFORM amd64)        # Program compilation platform, currently supports amd64 and arm64
-    set(CATKIN_MAKE ON)        # Whether to use ROS's catkin_make, ON or OFF
-    set(SIMULATION ON)         # For Gazebo simulation environment, ON or OFF
-    set(REAL_ROBOT OFF)        # For real robot control, ON or OFF, must be different from the previous one
-    set(DEBUG ON)              # Whether to turn on Debug debugging, ON or OFF
+    set(ROBOT_TYPE Go1)        # Robot model,  supporting Go1 and A1
+    set(PLATFORM amd64)        # Program compilation platform, supporting amd64 and arm64
+    set(CATKIN_MAKE ON)        # Whether to use catkin_make, ON or OFF
+    set(SIMULATION ON)         # For Gazebo simulation, ON or OFF
+    set(REAL_ROBOT OFF)        # For real robot control, ON or OFF,it must be different from the previous one
+    set(DEBUG ON)              # Whether to turn on Debug mode, ON or OFF
     set(MOVE_BASE ON)          # Whether to turn on the move_base navigation function, ON or OFF
 ```
 The first line of the above code can be thought of as assigning the variable `ROBOT_TYPE` to the string `"Go1"`.
-The third line can be thought of as assigning the variable `CATKIN_MAKE` to the Boolean quantity `true`, the `OFF` corresponds to the boolean `false`. 
+The third line can be thought of as assigning the variable `CATKIN_MAKE` to the boolean `true`, the `OFF` corresponds to the boolean `false`. 
 
 ## Build code and run in Gazebo
 In the following we will verify the control program in the Gazebo simulation. the reader should pay attention to CMakeLists.txt. set `ROBOT_TYPE` in it to their robot model.
