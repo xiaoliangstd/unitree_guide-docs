@@ -32,3 +32,28 @@ Open this file and at the beginning is the file used to configure conditional co
 ```
 The first line of the above code can be thought of as assigning the variable `ROBOT_TYPE` to the string `"Go1"`.
 The third line can be thought of as assigning the variable `CATKIN_MAKE` to the Boolean quantity `true`, the `OFF` corresponds to the boolean `false`. 
+
+## Validating the control algorithm in gazebo
+In the following we will verify the control program in the Gazebo simulation, because it is applied in the simulation environment. So the reader should pay attention to CMakeLists.txt. set `ROBOT_TYPE` in it to their robot model.
+and set `SIMULATION` to `ON`.`REAL_ROBOT` is set to `OFF`.
+```
+    set(ROBOT_TYPE Go1)        
+    set(PLATFORM amd64)       
+    set(CATKIN_MAKE ON)       
+    set(SIMULATION ON)         
+    set(REAL_ROBOT OFF)       
+    set(DEBUG ON)              
+    set(MOVE_BASE ON)          
+```
+After configuring the CMakeLists.txt file, simply go to the catkin_ws folder and type catkin_make and run it.If it looks like the image below and no errors are reported, it means the compilation was successful.
+![Switch](../../images/ros_build.png)
+<center>
+<br>
+<div style="color:orange; border-bottom: 0.1px solid #d9d9d9;
+display: inline-block;
+color: #999;
+padding: 1px;">Compile successfully</div>
+</center>
+<br>
+
+## Validating control algorithms in a real robot

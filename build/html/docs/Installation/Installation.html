@@ -42,6 +42,8 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Installation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#dependencies">Dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cmakelists-txt">CMakeLists.txt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#validating-the-control-algorithm-in-gazebo">Validating the control algorithm in gazebo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#validating-control-algorithms-in-a-real-robot">Validating control algorithms in a real robot</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="Anomalies.html">Anomalies</a></li>
@@ -112,6 +114,32 @@ Open this file and at the beginning is the file used to configure conditional co
 </div>
 <p>The first line of the above code can be thought of as assigning the variable <code class="docutils literal notranslate"><span class="pre">ROBOT_TYPE</span></code> to the string <code class="docutils literal notranslate"><span class="pre">&quot;Go1&quot;</span></code>.
 The third line can be thought of as assigning the variable <code class="docutils literal notranslate"><span class="pre">CATKIN_MAKE</span></code> to the Boolean quantity <code class="docutils literal notranslate"><span class="pre">true</span></code>, the <code class="docutils literal notranslate"><span class="pre">OFF</span></code> corresponds to the boolean <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+</div>
+<div class="section" id="validating-the-control-algorithm-in-gazebo">
+<h2>Validating the control algorithm in gazebo<a class="headerlink" href="#validating-the-control-algorithm-in-gazebo" title="Permalink to this headline">¶</a></h2>
+<p>In the following we will verify the control program in the Gazebo simulation, because it is applied in the simulation environment. So the reader should pay attention to CMakeLists.txt. set <code class="docutils literal notranslate"><span class="pre">ROBOT_TYPE</span></code> in it to their robot model.
+and set <code class="docutils literal notranslate"><span class="pre">SIMULATION</span></code> to <code class="docutils literal notranslate"><span class="pre">ON</span></code>.<code class="docutils literal notranslate"><span class="pre">REAL_ROBOT</span></code> is set to <code class="docutils literal notranslate"><span class="pre">OFF</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="nb">set</span><span class="p">(</span><span class="n">ROBOT_TYPE</span> <span class="n">Go1</span><span class="p">)</span>        
+    <span class="nb">set</span><span class="p">(</span><span class="n">PLATFORM</span> <span class="n">amd64</span><span class="p">)</span>       
+    <span class="nb">set</span><span class="p">(</span><span class="n">CATKIN_MAKE</span> <span class="n">ON</span><span class="p">)</span>       
+    <span class="nb">set</span><span class="p">(</span><span class="n">SIMULATION</span> <span class="n">ON</span><span class="p">)</span>         
+    <span class="nb">set</span><span class="p">(</span><span class="n">REAL_ROBOT</span> <span class="n">OFF</span><span class="p">)</span>       
+    <span class="nb">set</span><span class="p">(</span><span class="n">DEBUG</span> <span class="n">ON</span><span class="p">)</span>              
+    <span class="nb">set</span><span class="p">(</span><span class="n">MOVE_BASE</span> <span class="n">ON</span><span class="p">)</span>          
+</pre></div>
+</div>
+<p>After configuring the CMakeLists.txt file, simply go to the catkin_ws folder and type catkin_make and run it.If it looks like the image below and no errors are reported, it means the compilation was successful.
+<img alt="Switch" src="../../_images/ros_build.png" /></p>
+<center>
+<br>
+<div style="color:orange; border-bottom: 0.1px solid #d9d9d9;
+display: inline-block;
+color: #999;
+padding: 1px;">Compile successfully</div>
+</center>
+<br></div>
+<div class="section" id="validating-control-algorithms-in-a-real-robot">
+<h2>Validating control algorithms in a real robot<a class="headerlink" href="#validating-control-algorithms-in-a-real-robot" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
