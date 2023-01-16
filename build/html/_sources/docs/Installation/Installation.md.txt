@@ -34,8 +34,8 @@ The first line of the above code can be thought of as assigning the variable `RO
 The third line can be thought of as assigning the variable `CATKIN_MAKE` to the Boolean quantity `true`, the `OFF` corresponds to the boolean `false`. 
 
 ## Build code and run in Gazebo
-In the following we will verify the control program in the Gazebo simulation, because it is applied in the simulation environment. So the reader should pay attention to CMakeLists.txt. set `ROBOT_TYPE` in it to their robot model.
-and set `SIMULATION` to `ON`.`REAL_ROBOT` is set to `OFF`.
+In the following we will verify the control program in the Gazebo simulation. the reader should pay attention to CMakeLists.txt. set `ROBOT_TYPE` in it to their robot model.
+and set `SIMULATION` to `ON`. `REAL_ROBOT` is set to `OFF`.
 ```
     set(ROBOT_TYPE Go1)        
     set(PLATFORM amd64)       

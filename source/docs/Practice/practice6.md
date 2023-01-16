@@ -46,5 +46,7 @@ and its inverse matrix \lstinline{Tbs}.
 Then we can use the equation \ (\ref{eq:the coordinates of the foot end in the computer body coordinate system}) to calculate
 the target position of each foot end in the airframe coordinate system $\{s\}$, the
 respectively, for the four columns of the variable \lstinline{vecOP}.
-Finally, in the member function \lstinline{_c.
+Finally, in the member function \lstinline{_calcCmd}
+the target angle of each joint is found according to the target position of the foot end
+and assign it to each joint in _lowCmd}.
 The whole process of body posture control is completed.
