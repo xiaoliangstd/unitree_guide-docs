@@ -33,7 +33,7 @@ Open this file and at the beginning is the file used to configure conditional co
 The first line of the above code can be thought of as assigning the variable `ROBOT_TYPE` to the string `"Go1"`.
 The third line can be thought of as assigning the variable `CATKIN_MAKE` to the Boolean quantity `true`, the `OFF` corresponds to the boolean `false`. 
 
-## Validating the control algorithm in gazebo
+## Build code and run in Gazebo
 In the following we will verify the control program in the Gazebo simulation, because it is applied in the simulation environment. So the reader should pay attention to CMakeLists.txt. set `ROBOT_TYPE` in it to their robot model.
 and set `SIMULATION` to `ON`.`REAL_ROBOT` is set to `OFF`.
 ```
@@ -56,4 +56,32 @@ padding: 1px;">Compile successfully</div>
 </center>
 <br>
 
-## Validating control algorithms in a real robot
+## Build code and run in real robot
+Compile the controller on the robot's onboard computer.
+First copy the entire **unitree_guide** folder to robot's onboard computer. It is recommended to put it directly under the **Home** folder on the control computer.
+Considering that there is no ROS and Python on the UP Board of the A1 robot.we cannot use the `catkin_make` command of ROS to compile the program. Nor can we use the PyPlot class to draw line graphs.So we need to change the following property in CMakeLists.txt.
+```
+    set(PLATFORM amd64)         
+    set(CATKIN_MAKE OFF)            
+    set(SIMULATION OFF)             
+    set(REAL_ROBOT ON)              
+    set(DEBUG OFF)                  
+    set(MOVE_BASE OFF)          
+```
+About the PLATFORM variable.
+It indicates the architecture of the computer, for example, the 64-bit personal computer we commonly use is the **amd64** architecture.The UP Board on A1 is also **amd64** architecture.The control computer of Go1 is Raspberry Pi, which is **arm64** architecture.<br>
+After completing the changes to the CMakeLists.txt file. Use the scp function described in above section. Send the unitree_guide folder to the Home directory of the robot's onboard computer. For the UP Board of the A1 robot, this Home directory is /home/unitree. For the Go1 robot's Raspberry Pi it is /home/pi.Of course, the reader can also copy the unitree_guide folder to the Home directory manually using a USB stick.<br>
+Open an terminal and move the path to the unitree_guide folder. Then create two folders, build and bin.
+```
+ mkdir build bin        
+```
+The build folder holds the compiled intermediate files.
+And the compiled executable files will be output to the bin folder. Go to the build folder and execute the following two commands in sequence.
+```
+  cmake ..
+  make     
+```
+Then in the bin folder, execute the following command to run our quadruped robot control program.
+```
+ sudo ./junior_ctrl  
+```

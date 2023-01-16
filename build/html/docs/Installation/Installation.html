@@ -42,8 +42,8 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Installation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#dependencies">Dependencies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cmakelists-txt">CMakeLists.txt</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#validating-the-control-algorithm-in-gazebo">Validating the control algorithm in gazebo</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#validating-control-algorithms-in-a-real-robot">Validating control algorithms in a real robot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-code-and-run-in-gazebo">Build code and run in Gazebo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-code-and-run-in-real-robot">Build code and run in real robot</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="Anomalies.html">Anomalies</a></li>
@@ -115,8 +115,8 @@ Open this file and at the beginning is the file used to configure conditional co
 <p>The first line of the above code can be thought of as assigning the variable <code class="docutils literal notranslate"><span class="pre">ROBOT_TYPE</span></code> to the string <code class="docutils literal notranslate"><span class="pre">&quot;Go1&quot;</span></code>.
 The third line can be thought of as assigning the variable <code class="docutils literal notranslate"><span class="pre">CATKIN_MAKE</span></code> to the Boolean quantity <code class="docutils literal notranslate"><span class="pre">true</span></code>, the <code class="docutils literal notranslate"><span class="pre">OFF</span></code> corresponds to the boolean <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 </div>
-<div class="section" id="validating-the-control-algorithm-in-gazebo">
-<h2>Validating the control algorithm in gazebo<a class="headerlink" href="#validating-the-control-algorithm-in-gazebo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="build-code-and-run-in-gazebo">
+<h2>Build code and run in Gazebo<a class="headerlink" href="#build-code-and-run-in-gazebo" title="Permalink to this headline">¶</a></h2>
 <p>In the following we will verify the control program in the Gazebo simulation, because it is applied in the simulation environment. So the reader should pay attention to CMakeLists.txt. set <code class="docutils literal notranslate"><span class="pre">ROBOT_TYPE</span></code> in it to their robot model.
 and set <code class="docutils literal notranslate"><span class="pre">SIMULATION</span></code> to <code class="docutils literal notranslate"><span class="pre">ON</span></code>.<code class="docutils literal notranslate"><span class="pre">REAL_ROBOT</span></code> is set to <code class="docutils literal notranslate"><span class="pre">OFF</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="nb">set</span><span class="p">(</span><span class="n">ROBOT_TYPE</span> <span class="n">Go1</span><span class="p">)</span>        
@@ -138,8 +138,36 @@ color: #999;
 padding: 1px;">Compile successfully</div>
 </center>
 <br></div>
-<div class="section" id="validating-control-algorithms-in-a-real-robot">
-<h2>Validating control algorithms in a real robot<a class="headerlink" href="#validating-control-algorithms-in-a-real-robot" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="build-code-and-run-in-real-robot">
+<h2>Build code and run in real robot<a class="headerlink" href="#build-code-and-run-in-real-robot" title="Permalink to this headline">¶</a></h2>
+<p>Compile the controller on the robot’s onboard computer.
+First copy the entire <strong>unitree_guide</strong> folder to robot’s onboard computer. It is recommended to put it directly under the <strong>Home</strong> folder on the control computer.
+Considering that there is no ROS and Python on the UP Board of the A1 robot.we cannot use the <code class="docutils literal notranslate"><span class="pre">catkin_make</span></code> command of ROS to compile the program. Nor can we use the PyPlot class to draw line graphs.So we need to change the following property in CMakeLists.txt.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="nb">set</span><span class="p">(</span><span class="n">PLATFORM</span> <span class="n">amd64</span><span class="p">)</span>         
+    <span class="nb">set</span><span class="p">(</span><span class="n">CATKIN_MAKE</span> <span class="n">OFF</span><span class="p">)</span>            
+    <span class="nb">set</span><span class="p">(</span><span class="n">SIMULATION</span> <span class="n">OFF</span><span class="p">)</span>             
+    <span class="nb">set</span><span class="p">(</span><span class="n">REAL_ROBOT</span> <span class="n">ON</span><span class="p">)</span>              
+    <span class="nb">set</span><span class="p">(</span><span class="n">DEBUG</span> <span class="n">OFF</span><span class="p">)</span>                  
+    <span class="nb">set</span><span class="p">(</span><span class="n">MOVE_BASE</span> <span class="n">OFF</span><span class="p">)</span>          
+</pre></div>
+</div>
+<p>About the PLATFORM variable.
+It indicates the architecture of the computer, for example, the 64-bit personal computer we commonly use is the <strong>amd64</strong> architecture.The UP Board on A1 is also <strong>amd64</strong> architecture.The control computer of Go1 is Raspberry Pi, which is <strong>arm64</strong> architecture.<br>
+After completing the changes to the CMakeLists.txt file. Use the scp function described in above section. Send the unitree_guide folder to the Home directory of the robot’s onboard computer. For the UP Board of the A1 robot, this Home directory is /home/unitree. For the Go1 robot’s Raspberry Pi it is /home/pi.Of course, the reader can also copy the unitree_guide folder to the Home directory manually using a USB stick.<br>
+Open an terminal and move the path to the unitree_guide folder. Then create two folders, build and bin.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">mkdir</span> <span class="n">build</span> <span class="nb">bin</span>        
+</pre></div>
+</div>
+<p>The build folder holds the compiled intermediate files.
+And the compiled executable files will be output to the bin folder. Go to the build folder and execute the following two commands in sequence.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">cmake</span> <span class="o">..</span>
+  <span class="n">make</span>     
+</pre></div>
+</div>
+<p>Then in the bin folder, execute the following command to run our quadruped robot control program.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">sudo</span> <span class="o">./</span><span class="n">junior_ctrl</span>  
+</pre></div>
+</div>
 </div>
 </div>
 
