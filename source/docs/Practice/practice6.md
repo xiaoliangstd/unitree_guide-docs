@@ -35,3 +35,16 @@ frame represents the coordinate system in which the position coordinates in `vec
 5. `getFootVelocity(state, id)`:  Get the position coordinates of all foot ends relative to the center of the frame.The parameter **frame** can be `FrameType::HIP` and `FrameType::BODY`. It can also be `FrameType::GLOBAL`, which represents the world coordinate system.
 
 6. `getFeet2BPositions(state, frame)`:
+
+
+## FreeStand state
+The code for the FreeStand state is in the **State_FreeStand.cpp** file.When we first enter the FreeStand state, we will calculate the equation FreeStand in the `enter` function, we will calculate the p_b0(9) in the equation (6.2), which is the variable `_initVecOX` in the program.It will also calculate p_si in equation (6.1), the respectively, for the four columns of the variable `_initVecXP` in the program.
+In the membership function `_calcOP`, we use the target
+Euler angle and the target fuselage height, we calculate Tsb in the equation
+fuselage target attitude
+and its inverse matrix \lstinline{Tbs}.
+Then we can use the equation \ (\ref{eq:the coordinates of the foot end in the computer body coordinate system}) to calculate
+the target position of each foot end in the airframe coordinate system $\{s\}$, the
+respectively, for the four columns of the variable \lstinline{vecOP}.
+Finally, in the member function \lstinline{_c.
+The whole process of body posture control is completed.
