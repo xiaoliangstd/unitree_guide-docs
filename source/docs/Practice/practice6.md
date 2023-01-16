@@ -1,7 +1,6 @@
-# Practice6: posture control of robots
-In FixedStand state, you only need to press **"3"** key on the keyboard
-or the **"L2+X"** key combination on the handle to enter the FreeStand state.
-In this state, we can use the keyboard or the joystick to control the robot to change its position and attitude in the same place. When using keyboard, we use **WASD** key to simulate the left stick of joystick, and **IJKL** key to simulate the right stick. Meanwhile, the space bar represents returning the value of the left and right joysticks to 0.
+# Practice6: orientation control of robots
+In this practice, we will complete the FreeStand state.In FixedStand state, you only need to press **"3"** key on the keyboard or the **"L2+X"** key combination on the handle to enter the FreeStand state. We can use the keyboard or the joystick to change the position and orientation of robot in this state. We use **WASD** key to simulate the left stick of joystick, and **IJKL** key to simulate the right stick. Meanwhile, the spacebar represents returning the value of the left and right joysticks to 0.
+
 ![FreeStand](../../images/Practice/freeStand.gif)
 <center>
 <br>
@@ -11,8 +10,8 @@ color: #999;
 padding: 1px;">FreeStand</div>
 </center>
 <br>
-The specific implementation of this state is through the
-the algorithm introduced in section 6.1.1 of this chapter.
+
+The implementation of this state is through the algorithm introduced in section 6.1.1.
 to calculate the position of each foot end in the target pose of the robot.
 Then, the target position of each joint is calculated and the joint position is controlled.
 Although the algorithm in section 6.1.1 can control the robot in three directions of translation and three directions of rotation
