@@ -30,3 +30,5 @@ Open this file and at the beginning is the file used to configure conditional co
     set(DEBUG ON)              # Whether to turn on Debug debugging, ON or OFF
     set(MOVE_BASE ON)          # Whether to turn on the move_base navigation function, ON or OFF
 ```
+The first line of the above code can be thought of as assigning the variable `ROBOT_TYPE` to the string `"Go1"`.
+The third line can be thought of as assigning the variable `CATKIN_MAKE` to the Boolean quantity `true`, the `OFF` corresponds to the boolean `false`. 
