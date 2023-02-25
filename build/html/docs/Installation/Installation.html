@@ -36,18 +36,17 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../Overview/index.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../GettingStarted/index.html">Getting Started</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Installation</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Installation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#dependencies">Dependencies</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#package-dependencies">Package dependencies</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#environment-dependencies">Environment dependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#package-dependencies">Package dependencies</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#cmakelists-txt">CMakeLists.txt</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#build-code-and-run-in-gazebo">Build code and run in Gazebo</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#build-code-and-run-in-real-robot">Build code and run in real robot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-code-and-run-in-sim">Build code and run in sim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-code-and-run-in-real">Build code and run in real</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="Anomalies.html">Anomalies</a></li>
@@ -84,25 +83,33 @@
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="dependencies">
 <h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="environment-dependencies">
+<h3>Environment dependencies<a class="headerlink" href="#environment-dependencies" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li>A computer running Ubuntu 18.04 system</li>
+<li>ROS melodic</li>
+<li>Python2</li>
+<li><a class="reference external" href="https://github.com/lcm-proj/lcm">LCM</a></li>
+<li>pthread</li>
+</ol>
+</div>
 <div class="section" id="package-dependencies">
 <h3>Package dependencies<a class="headerlink" href="#package-dependencies" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
 <li><a class="reference external" href="https://github.com/unitreerobotics/unitree_guide">unitree_guide</a></li>
 <li><a class="reference external" href="https://github.com/unitreerobotics/unitree_ros">unitree_ros</a></li>
-<li><a class="reference external" href="https://github.com/unitreerobotics/unitree_ros_to_real">unitree_ros_to_real</a></li>
+<li><a class="reference external" href="https://github.com/unitreerobotics/unitree_ros_to_real">unitree_legged_msgs</a>(Note that: unitree_legged_real package should not be a part of dependencies)</li>
 </ol>
-<p><img alt="Switch" src="../../_images/download_pkg.png" /></p>
+<p>Download and put these three packages in the src folder of someone ROS workspace(catkin_ws here).</p>
+<p><img alt="Switch" src="../../_images/catin_ws.png" /></p>
 <center>
 <br>
 <div style="color:orange; border-bottom: 0.1px solid #d9d9d9;
 display: inline-block;
 color: #999;
-padding: 1px;">All the packages that you need to prepare in ros workspace</div>
+padding: 1px;">All the packages that you need to prepare in someone ros workspace</div>
 </center>
 <br></div>
-<div class="section" id="environment-dependencies">
-<h3>Environment dependencies<a class="headerlink" href="#environment-dependencies" title="Permalink to this headline">¶</a></h3>
-</div>
 </div>
 <div class="section" id="cmakelists-txt">
 <h2>CMakeLists.txt<a class="headerlink" href="#cmakelists-txt" title="Permalink to this headline">¶</a></h2>
@@ -118,8 +125,8 @@ padding: 1px;">All the packages that you need to prepare in ros workspace</div>
 </div>
 <p>The meaning of the first line of above code is set the program to support the Go1 paltfrom. Changing <code class="docutils literal notranslate"><span class="pre">Go1</span></code> to <code class="docutils literal notranslate"><span class="pre">A1</span></code> to support A1 platform, like <code class="docutils literal notranslate"><span class="pre">set(ROBOT_TYPE</span> <span class="pre">A1)</span></code>. The second line is to decide which platform the code will run on, if it runs on a PC, which is usually <code class="docutils literal notranslate"><span class="pre">amd64</span></code>.The third and fourth line together determine the program controls the simulated robot or the physical robot.</p>
 </div>
-<div class="section" id="build-code-and-run-in-gazebo">
-<h2>Build code and run in Gazebo<a class="headerlink" href="#build-code-and-run-in-gazebo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="build-code-and-run-in-sim">
+<h2>Build code and run in sim<a class="headerlink" href="#build-code-and-run-in-sim" title="Permalink to this headline">¶</a></h2>
 <p>In the following we will verify the control program in the Gazebo simulation. the reader should pay attention to CMakeLists.txt. set <code class="docutils literal notranslate"><span class="pre">ROBOT_TYPE</span></code> in it to their robot model.
 and set <code class="docutils literal notranslate"><span class="pre">SIMULATION</span></code> to <code class="docutils literal notranslate"><span class="pre">ON</span></code>. <code class="docutils literal notranslate"><span class="pre">REAL_ROBOT</span></code> is set to <code class="docutils literal notranslate"><span class="pre">OFF</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="nb">set</span><span class="p">(</span><span class="n">ROBOT_TYPE</span> <span class="n">Go1</span><span class="p">)</span>        
@@ -141,8 +148,8 @@ color: #999;
 padding: 1px;">Compile successfully</div>
 </center>
 <br></div>
-<div class="section" id="build-code-and-run-in-real-robot">
-<h2>Build code and run in real robot<a class="headerlink" href="#build-code-and-run-in-real-robot" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="build-code-and-run-in-real">
+<h2>Build code and run in real<a class="headerlink" href="#build-code-and-run-in-real" title="Permalink to this headline">¶</a></h2>
 <p>First copy the entire <strong>unitree_guide</strong> folder to robot’s onboard computer. It is recommended to put it directly under the <strong>Home</strong> folder.Considering that there is no ROS and Python on the UP Board of the A1 robot.we cannot use the <code class="docutils literal notranslate"><span class="pre">catkin_make</span></code> command of ROS to compile the program. Nor can we use the PyPlot class to draw line graphs.So we need to change the following property in CMakeLists.txt.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="nb">set</span><span class="p">(</span><span class="n">PLATFORM</span> <span class="n">amd64</span><span class="p">)</span>         
     <span class="nb">set</span><span class="p">(</span><span class="n">CATKIN_MAKE</span> <span class="n">OFF</span><span class="p">)</span>            

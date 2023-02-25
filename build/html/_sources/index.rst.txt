@@ -5,7 +5,12 @@
 
 Welcome to unitree_guide documentation!
 ===========================================
-The unitree_guide project is the open source software framework.This document will give you some details and help you get started with unitree_guide.
+The unitree_guide is an open source project for controlling the quadruped robot of Unitree Robotics, and it is also the software project accompanying 
+`<<四足机器人控制算法--建模、控制与实践>>`_ published by Unitree Robotics.
+
+.. _<<四足机器人控制算法--建模、控制与实践>>: https://detail.tmall.com/item.htm?id=704510718152
+
+.. image:: ./images/book.jpeg
 
 .. note::
 
@@ -17,7 +22,7 @@ Table of Contents
 .. toctree::
    :maxdepth: 4
 
-   docs/Overview/index.rst
+   .. docs/Overview/index.rst
    docs/GettingStarted/index.rst
    docs/Installation/index.rst
 
