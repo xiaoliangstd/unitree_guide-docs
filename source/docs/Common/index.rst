@@ -6,4 +6,5 @@ Common
 
    common.md
    fsm.md
+   fileStructure.md
    

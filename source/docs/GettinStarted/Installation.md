@@ -12,18 +12,6 @@
 2. [unitree_ros](https://github.com/unitreerobotics/unitree_ros)
 3. [unitree_legged_msgs](https://github.com/unitreerobotics/unitree_ros_to_real)(Note that: unitree_legged_real package should not be a part of dependencies)
 
-Download and put these three packages in the src folder of someone ROS workspace(catkin_ws here).
-
-![Switch](../../images/catin_ws.png)
-<center>
-<br>
-<div style="color:orange; border-bottom: 0.1px solid #d9d9d9;
-display: inline-block;
-color: #999;
-padding: 1px;">All the packages that you need to prepare in someone ros workspace</div>
-</center>
-<br>
-
 ## CMakeLists.txt
 The program of Unitree_guide supports many scenarios.To easily switch between these scenarios, we need to rely on conditional compilation. We can let the compiler to compile what we want with a simple setup. The settings for conditional compilation are all in the **unitree_guide/CMakeLists.txt** file,which is at the beginning of CMakeLists.txt.
 ```
@@ -37,8 +25,22 @@ The program of Unitree_guide supports many scenarios.To easily switch between th
 ```
 The meaning of the first line of above code is set the program to support the Go1 paltfrom. Changing `Go1` to `A1` to support A1 platform, like `set(ROBOT_TYPE A1)`. The second line is to decide which platform the code will run on, if it runs on a PC, which is usually `amd64`.The third and fourth line together determine the program controls the simulated robot or the physical robot.
 
-## Build code and run in sim
-In the following we will verify the control program in the Gazebo simulation. the reader should pay attention to CMakeLists.txt. set `ROBOT_TYPE` in it to their robot model.
+## Build and Run
+### simulation
+
+Download and put Package dependencies packages in the src folder of someone ROS workspace(catkin_ws here).
+
+![Switch](../../images/catin_ws.png)
+<center>
+<br>
+<div style="color:orange; border-bottom: 0.1px solid #d9d9d9;
+display: inline-block;
+color: #999;
+padding: 1px;">All the packages that you need to prepare in someone ros workspace</div>
+</center>
+<br>
+
+the reader should pay attention to CMakeLists.txt. set `ROBOT_TYPE` in it to their robot model.
 and set `SIMULATION` to `ON`. `REAL_ROBOT` is set to `OFF`.
 ```
     set(ROBOT_TYPE Go1)        
@@ -60,7 +62,7 @@ padding: 1px;">Compile successfully</div>
 </center>
 <br>
 
-## Build code and run in real 
+### real 
 First copy the entire **unitree_guide** folder to robot's onboard computer. It is recommended to put it directly under the **Home** folder.Considering that there is no ROS and Python on the UP Board of the A1 robot.we cannot use the `catkin_make` command of ROS to compile the program. Nor can we use the PyPlot class to draw line graphs.So we need to change the following property in CMakeLists.txt.
 ```
     set(PLATFORM amd64)         
@@ -87,3 +89,5 @@ Then in the bin folder, execute the following command to run our quadruped robot
 ```
  sudo ./junior_ctrl  
 ```
+
+## Anomalies

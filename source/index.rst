@@ -29,9 +29,8 @@ Table of Contents
 .. toctree::
    :maxdepth: 4
 
-   .. docs/Overview/index.rst
    docs/Common/index.rst
-   docs/Installation/index.rst
+   docs/GettinStarted/index.rst
    docs/References/index.rst
 
 
