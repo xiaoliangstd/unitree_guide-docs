@@ -1,5 +1,3 @@
-# common
-
 ## Hardware interface 
 ![A1 Robot Hardware interface](../../images/A1_hardware_interface.png)
 <center>

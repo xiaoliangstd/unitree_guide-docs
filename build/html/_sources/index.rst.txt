@@ -16,6 +16,13 @@ The unitree_guide is an open source project for controlling the quadruped robot 
 
    Copyright (c) 2020-2023, Unitree Robotics.Co.Ltd. All rights reserved.
 
+.. note::
+
+   Unitree_guide provides a basic quadruped robot controller for beginners. 
+   To achive better performance, additional fine tuning of parameters might be required. 
+   Any contribution and good idea from the robotics community are all welcome. 
+   Feel free to raise an issue ~
+
 Table of Contents
 ==========================================
 
@@ -23,8 +30,9 @@ Table of Contents
    :maxdepth: 4
 
    .. docs/Overview/index.rst
-   docs/GettingStarted/index.rst
+   docs/Common/index.rst
    docs/Installation/index.rst
+   docs/References/index.rst
 
 
    
