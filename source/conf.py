@@ -28,7 +28,9 @@ version = u''
 # The full version, including alpha/beta/rc tags
 release = u''
 
-
+html_show_sourcelink = False
+html_theme_options = {
+    'display_version': False}
 # -- General configuration ---------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
