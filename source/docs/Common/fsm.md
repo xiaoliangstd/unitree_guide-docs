@@ -39,7 +39,8 @@ padding: 1px;">FreeStand</div>
 <br>
 
 ### Trotting 
-Trotting gait, when the robot will walk using a Trotting gait.
+In this state, the robot will walk using a given gait.
+
 ![Switch](../../images/gif/trot_new.gif)
 <center>
 <br>
@@ -66,7 +67,7 @@ padding: 1px;">crawl</div>
 <div style="color:orange; border-bottom: 0.1px solid #d9d9d9;
 display: inline-block;
 color: #999;
-padding: 1px;">crawl</div>
+padding: 1px;">There are many gaits definition in unitree_guide/main.cpp file</div>
 </center>
 <br>
 

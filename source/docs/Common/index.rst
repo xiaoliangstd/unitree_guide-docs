@@ -4,7 +4,7 @@ Common
 .. toctree::
    :maxdepth: 2
 
-   common.md
+   .. common.md
    fsm.md
    fileStructure.md
    
