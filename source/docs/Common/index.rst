@@ -4,7 +4,7 @@ Common
 .. toctree::
    :maxdepth: 2
 
-   .. common.md
-   fsm.md
+   RobotNetwork.rst
+   fsm.rst
    fileStructure.md
    

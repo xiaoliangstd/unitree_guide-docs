@@ -5,7 +5,7 @@
 
 Welcome to unitree_guide documentation!
 ===========================================
-The unitree_guide is an open source project for controlling the quadruped robot of Unitree Robotics, and it is also the software project accompanying 
+The `unitree_guide`_ is an open source project for controlling the quadruped robot of Unitree Robotics, and it is also the software project accompanying 
 `<<四足机器人控制算法--建模、控制与实践>>`_ published by Unitree Robotics.
 
 .. _<<四足机器人控制算法--建模、控制与实践>>: https://detail.tmall.com/item.htm?id=704510718152
@@ -21,7 +21,11 @@ The unitree_guide is an open source project for controlling the quadruped robot 
    Unitree_guide provides a basic quadruped robot controller for beginners. 
    To achive better performance, additional fine tuning of parameters might be required. 
    Any contribution and good idea from the robotics community are all welcome. 
-   Feel free to raise an issue ~
+   Feel free to `raise an issue`_
+   
+.. _unitree_guide: https://github.com/unitreerobotics/unitree_guide
+
+.. _raise an issue: https://github.com/unitreerobotics/unitree_guide/issues
 
 Table of Contents
 ==========================================

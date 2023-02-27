@@ -111,7 +111,7 @@ For starting the controller, open an another terminal and switch to the same dir
 
 
 ### real 
-Copy the entire **unitree_guide** package to robot's onboard computer. It is recommended to put it directly under the **Home** folder. Consider that there is no ROS and Python on the UP Board of the A1 robot. we cannot use the catkin_make command of ROS to compile the program. Nor can we use the PyPlot class to draw line graphs. So we need to change the following property in CMakeLists.txt.
+Copy the unitree_guide package to robot's onboard computer. It is recommended to put it directly under the Home folder. Consider that there is no ROS and Python on the UP Board of the A1 robot. we cannot use the catkin_make command of ROS to compile the program. Nor can we use the PyPlot class to draw line graphs. So we need to change the following property in CMakeLists.txt.
 ```
     set(PLATFORM amd64)         
     set(CATKIN_MAKE OFF)            
@@ -120,18 +120,19 @@ Copy the entire **unitree_guide** package to robot's onboard computer. It is rec
     set(DEBUG OFF)                  
     set(MOVE_BASE OFF)          
 ```
-After completing the changes to the CMakeLists.txt file.  Use the scp function described in above section.  Send the unitree_guide folder to the Home directory of the robot's onboard computer. For the UP Board of the A1 robot, this Home directory is /home/unitree. For the Go1 robot's Raspberry Pi it is /home/pi.Of course, the reader can also copy the unitree_guide folder to the Home directory manually using a USB stick.<br>
-Then open an terminal and move the path to the unitree_guide folder. Then use mkdir command to create two folders, build and bin.
+After completing the changes to the CMakeLists.txt file.  Use the scp function described in above section.  Send the unitree_guide folder to the Home directory of the robot's onboard computer. For the UP Board of the A1 robot, this Home directory is /home/unitree. For the Go1 robot's Raspberry Pi it is /home/pi. Of course, the reader can also copy the unitree_guide folder to the Home directory manually using a USB stick.<br>
+Then open an terminal and switch the directory to the unitree_guide folder. Then use mkdir command to create two folders, build and bin.
+
 ```
  mkdir build bin        
 ```
 The build folder holds the compiled intermediate files.
-And the compiled executable files will be output to the bin folder. Go to the build folder and execute the following two commands in sequence.
+And the executable files will be output to the bin folder. Go to the build folder and execute the following two commands step by step
 ```
   cmake ..
   make     
 ```
-Then in the bin folder, execute the following command to run our quadruped robot control program.
+Then in the bin folder, execute the following command to run controller.
 ```
  sudo ./junior_ctrl  
 ```
