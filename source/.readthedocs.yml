@@ -3,7 +3,7 @@ version: 2
 formats: all
 
 sphinx:
-  configuration: docs/conf.py
+  configuration: conf.py
   fail_on_warning: true
 
 python:
