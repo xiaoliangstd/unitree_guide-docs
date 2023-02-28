@@ -31,6 +31,9 @@ In this state, the robot will walk using a given gait.
 
 .. image:: ../../images/gif/trot_new.gif
 
+.. note::
+   In simution, press the 'w' 'a' 's' 'd' key to control the translation of the robot, press the 'j' 'l' key to control the rotation of the robot, and press the Spacebar to stop the robot. In real, use the unitree joystick to steer the robot.
+
 you can also control the robot to walk using the crawl gait.
 
 .. image:: ../../images/gif/crawl.gif
