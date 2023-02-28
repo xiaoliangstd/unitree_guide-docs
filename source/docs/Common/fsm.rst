@@ -63,6 +63,6 @@ The image shown below shows the FSM and switching conditions. Each box represent
 .. image:: ../../images/fsmSwitch.png
 
 .. note::
-   For example:
+   For switching conditions, such as:
    **L2 + A** : This means that you need to press the L2 key and the A key on the unitree joystick at the same time, which is only valid for controlling the real robot.
    **2** : This means that you need to press the 2 key on the keyboard, which is only valid for controlling the sim robot.
