@@ -38,16 +38,28 @@ Adding the user computer to the robot network is divided into two steps:
 
 Network-related functions
 -------------------
-Here are some commonly used network-related commands: ping, ssh.
+Here are some useful network-related commands: ping, ssh.
 
 ping
 ^^^^
-The function of the ping command is to test whether communication can be established with the specified IP address. After completing the network port setting of the user computer, you can use the ping command to test whether the network is connected.
-There is an example for testing whether communication is established with main control board. 
-::
+.. tabs::
 
-    ping 192.168.123.10
+    .. tab:: Introduction
+        
+        The function of the ping command is to test whether communication can be established with the specified IP address. 
+
+    .. tab:: Usage
+
+        There is an example for testing whether communication is established with main control board. 
+        
+        .. code:: console
+
+           ping 192.168.123.10
+
 
 ssh
 ^^^
+
+sdfsdf
+
 

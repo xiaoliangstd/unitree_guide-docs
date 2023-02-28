@@ -40,13 +40,13 @@ html_theme_options = {
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['recommonmark'
-]
+
+extensions = ['sphinx_tabs.tabs','recommonmark']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
-
+sphinx_tabs_valid_builders = ['linkcheck']
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #

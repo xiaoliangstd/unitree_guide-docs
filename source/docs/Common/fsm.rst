@@ -38,7 +38,10 @@ you can also control the robot to walk using the crawl gait.
 
 .. image:: ../../images/gif/crawl.gif
 
-There are many gaits definition in unitree_guide/main.cpp file. Use other gaits by uncommenting the code shown below, then compiling the unitree_guide again. 
+There are many gaits definition in `unitree_guide/main.cpp`_  file. Use other gaits by uncommenting the code shown below, then compiling the unitree_guide again. 
+
+
+.. _unitree_guide/main.cpp: https://github.com/unitreerobotics/unitree_guide/blob/main/unitree_guide/src/main.cpp
 
 .. image:: ../../images/gait.png
 
@@ -53,7 +56,7 @@ Navigation and obstacle avoidance mode, the robot will move according to the com
 
 State switch
 -------------------
-The image shown below shows the FSM and switching conditions.
+The image shown below shows the FSM and switching conditions. Each box represents a state, and there are state switching conditions between the two boxes, and the arrow indicates the direction of state transfer.
 
 .. image:: ../../images/fsmSwitch.png
 
