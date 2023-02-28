@@ -1,6 +1,8 @@
 FSM
 ==========================================
-FSM(Finite state machines) are used to manage robot behavior and provide user services. The header files related to the FSM are in unitree_guide/include/FSM, and the source code files are in unitree_guide/src/FSM.
+FSM(Finite state machines) are used to manage robot behavior and provide user services. The files related to the FSM are in `FSM`_ folder.
+
+.. _FSM: https://github.com/unitreerobotics/unitree_guide/tree/main/unitree_guide/src/FSM
 
 Passive
 -------------------
@@ -56,7 +58,7 @@ Navigation and obstacle avoidance mode, the robot will move according to the com
 
 State switch
 -------------------
-The image shown below shows the FSM and switching conditions. Each box represents a state, and there are state switching conditions between the two boxes, and the arrow indicates the direction of state transfer.
+The image shown below shows the FSM and switching conditions. Each box represents a state, and there are state switching conditions between each of two boxes, and the arrow indicates the direction of state transfer.
 
 .. image:: ../../images/fsmSwitch.png
 
