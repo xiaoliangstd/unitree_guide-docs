@@ -112,7 +112,7 @@ For starting the controller, open an another terminal and switch to the same dir
 
 
 ### real 
-Copy the unitree_guide package to robot's onboard computer. It is recommended to put it directly under the Home folder. Consider that there is no ROS and Python on the UP Board of the A1 robot. we cannot use the catkin_make command of ROS to compile the program. Nor can we use the PyPlot class to draw line graphs. So we need to change the following property in CMakeLists.txt.
+Copy the unitree_guide package to robot's onboard computer. It is recommended to put it directly under the Home folder. Consider that there is no ROS and Python on the UP Board of the A1 robot. we cannot use the catkin_make command of ROS to compile the program. Nor can we use the PyPlot class to draw line graphs. So we need to change the  CMakeLists.txt as follow.
 ```
     set(PLATFORM amd64)         
     set(CATKIN_MAKE OFF)            
@@ -121,7 +121,7 @@ Copy the unitree_guide package to robot's onboard computer. It is recommended to
     set(DEBUG OFF)                  
     set(MOVE_BASE OFF)          
 ```
-After completing the changes to the CMakeLists.txt file.  Use the scp function described in above section.  Send the unitree_guide folder to the Home directory of the robot's onboard computer. For the UP Board of the A1 robot, this Home directory is /home/unitree. For the Go1 robot's Raspberry Pi it is /home/pi. Of course, the reader can also copy the unitree_guide folder to the Home directory manually using a USB stick.<br>
+After completing the changes to the CMakeLists.txt file.  Use the scp function described in above section.  Send the unitree_guide folder to the Home directory of the robot's onboard computer. For the UP Board of the A1 robot, this Home directory is /home/unitree. For the Go1 robot's Raspberry Pi it is /home/pi. <br>
 Then open an terminal and switch the directory to the unitree_guide folder. Then use mkdir command to create two folders, build and bin.
 
 ```

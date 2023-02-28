@@ -27,13 +27,22 @@ The architecture of network framework of the Go1 robot is similar to that of the
 Add user computer to Robot Network
 -------------------
 In order to use unitree_guide, a feasible method is to copy the code to the robot's onboard computer, and then compile and run it. However, this process is relatively cumbersome, which is not conducive to frequent modification of debugging code. Another better method is to add the user computer to the robot network, communicate directly with the main control board, and send control commands.
-Adding the user computer to the robot network is divided into two steps:
+Adding the user computer to the robot network is divided into two steps:First, use a network cable to connect the user computer and the switch of the robot.
+Second, configure the IP address of the network port of the user computer 
+run the following command to open the configuration file
+:: 
+   sudo gedit /etc/network/interfaces
 
-1. Use a network cable to connect the user computer and the switch of the robot
+Then add the following four lines of commands at the end of the file Note that the network port device name needs to be replaced with the user's own network port device name
+:: 
+   auto {your network port device name}
+   iface {your network port device name} inet static
+   address 192.168.123.162
+   netmask 255.255.255.0
 
-2. Configure the IP address of the network port of the user computer
+.. note::
 
-    The network on the robot belongs to the 123 network segment. When configuring the IP address of the user computer, it is necessary to pay attention not to duplicate the IP address of the computer on the robot.
+   it is necessary to pay attention not to duplicate the IP address of the onboard computer of the robot.
 
 
 Network-related functions
