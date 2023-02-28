@@ -40,21 +40,22 @@ Network-related functions
 -------------------
 Here are some useful network-related commands: ping, ssh.
 
-.. ping
-.. ^^^^
-abs::
+ping
+^^^^
 
-..     .. tab:: Introduction
+.. tabs::
+
+    .. tab:: Introduction
         
-..         The function of the ping command is to test whether communication can be established with the specified IP address. 
+        The function of the ping command is to test whether communication can be established with the specified IP address. 
 
-..     .. tab:: Usage
+    .. tab:: Usage
 
-..         There is an example for testing whether communication is established with main control board. 
+        There is an example for testing whether communication is established with main control board. 
         
-..         .. code:: console
+        .. code:: console
 
-..            ping 192.168.123.10
+           ping 192.168.123.10
 
 
 ssh
