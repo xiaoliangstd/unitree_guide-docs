@@ -57,7 +57,7 @@ This line determine whether open the MOVE_BASE, you can also use the OFF option 
 
 Download and put packages in the src folder of someone ROS workspace(catkin_ws here).
 
-![Switch](../../images/catin_ws.png)
+![catin_ws](../../images/catin_ws.png)
 <center>
 <br>
 <div style="color:orange; border-bottom: 0.1px solid #d9d9d9;

@@ -65,7 +65,7 @@ templates_path = ['_templates']
 #     '.md': CommonMarkParser,
 # }
 
-html_logo = "images/unitree+robotics.ai"
+html_logo = "images/unitree+robotics_logo1.svg"
 html_theme_options = {
     "logo_only": False,
     "display_version": False,
