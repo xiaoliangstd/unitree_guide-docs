@@ -1,18 +1,18 @@
-Robot Network
+Robot network framework
 ================
-It is very important to understand the network of the robot. After understanding it, you can directly use the personal computer to control the robot, and use the network to transfer files to the robot. It can improve your development efficiency.
+It is necessary to understand the network framework of the robot. After understanding it, you can directly use the personal computer to control the robot, and use the network to transfer files to the robot. It can improve your development efficiency.
 
 
-A1 Network
+A1 network framework
 -------------------
 There are three onboard computers on the A1 robot. Except for main control board that is not open to the user, the other two are open to the user, one of which is an UP Board and the other is an ARM Raspberry Pi or TX2.
 The robot is equipped with a switch in order to allow the three computers to communicate with each other.
 
 .. image:: ../../images/a1_network_framework.png
 
-Go1 Network
+Go1 network framework
 -------------------
-The architecture of network of the Go1 robot is similar to that of the A1 robot, but the computing power of the Go1 robot has been significantly increased. There are five computers in the Go1 Education Edition, the same main control board as the A1, a Raspberry Pi 4B and three Jetson nano computers. The five computers are also communicated with each other through a switch.
+The architecture of network framework of the Go1 robot is similar to that of the A1 robot, but the computing power of the Go1 robot has been significantly increased. There are five computers in the Go1 Education Edition, the same main control board as the A1, a Raspberry Pi 4B and three Jetson nano computers. The five computers are also communicated with each other through a switch.
 
 .. image:: ../../images/go1_network_framework.001.png
 

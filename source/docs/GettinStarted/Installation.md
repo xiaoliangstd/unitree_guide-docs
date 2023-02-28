@@ -23,7 +23,8 @@
 <font size=2>Note that: unitree_legged_real package should not be a part of dependencies</font>
 
 ## CMakeLists.txt
-The program of Unitree_guide supports many scenarios. To easily switch between these scenarios, we need to rely on conditional compilation. We can let the compiler to compile what we want with a simple setup. The settings for conditional compilation are in the **unitree_guide/CMakeLists.txt** file, which is at the beginning of CMakeLists.txt.
+The program of Unitree_guide supports many scenarios. To easily switch between these scenarios, we need to rely on conditional compilation. We can let the compiler to compile what we want with a simple setup. The settings for conditional compilation are in the [unitree_guide/CMakeLists.txt](https://github.com/unitreerobotics/unitree_guide/blob/main/unitree_guide/CMakeLists.txt) 
+file, which is at the beginning of CMakeLists.txt.
 ```
     set(ROBOT_TYPE Go1)        # Robot model,  supporting Go1 and A1
     set(PLATFORM amd64)        # Program compilation platform, supporting amd64 and arm64
