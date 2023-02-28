@@ -41,7 +41,8 @@ html_theme_options = {
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 
-extensions = ['sphinx_tabs.tabs','recommonmark']
+# extensions = ['sphinx_tabs.tabs','recommonmark']
+extensions = ['recommonmark']
 # extensions = ['recommonmark']
 
 # Add any paths that contain templates here, relative to this directory.
@@ -64,7 +65,7 @@ templates_path = ['_templates']
 #     '.md': CommonMarkParser,
 # }
 
-html_logo = "images/unitree_logo.png"
+html_logo = "images/unitree+robotics.ai"
 html_theme_options = {
     "logo_only": False,
     "display_version": False,

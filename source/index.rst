@@ -34,7 +34,7 @@ Table of Contents
    :maxdepth: 4
 
    docs/Common/index.rst
-   .. docs/GettinStarted/index.rst
+   docs/GettinStarted/index.rst
    docs/References/index.rst
 
 

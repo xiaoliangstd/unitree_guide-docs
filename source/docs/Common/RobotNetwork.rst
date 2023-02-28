@@ -38,29 +38,34 @@ Adding the user computer to the robot network is divided into two steps:
 
 Network-related functions
 -------------------
-Here are some useful network-related commands: ping, ssh.
+Here are some useful network-related commands: ping, scp.
 
 ping
 ^^^^
+The function of the ping command is to test whether communication can be established with the specified IP address. 
+Here is an example for testing whether communication is established with main control board.
+:: 
+   ping 192.168.123.10 
 
-.. tabs::
-
-    .. tab:: Introduction
+..     .. tab:: Introduction
         
-        The function of the ping command is to test whether communication can be established with the specified IP address. 
+..         The function of the ping command is to test whether communication can be established with the specified IP address. 
 
-    .. tab:: Usage
+..     .. tab:: Usage
 
-        There is an example for testing whether communication is established with main control board. 
+..         There is an example for testing whether communication is established with main control board. 
         
-        .. code:: console
+..         .. code:: console
 
-           ping 192.168.123.10
+..            ping 192.168.123.10
 
 
-ssh
+scp
 ^^^
+The scp (Secure Copy) command can copy files between multiple computers. For example, to send the unitree_guide package to the Raspberry Pi of the Go1 robot, you can run the following command:
+::
+    scp unitree_guide pi@192.168.123.161:/home/pi
 
-sdfsdf
+
 
 
