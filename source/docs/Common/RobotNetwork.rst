@@ -18,7 +18,7 @@ The architecture of network framework of the Go1 robot is similar to that of the
 
 .. note::
 
-   The framework shown above may be slightly different from the official manual, but it does not affect the use. The PC needs to be configured the IP address before it can communicate with the onboard computer of the robot through the switch.
+   The framework shown above may be slightly different from the official manual, but it does not affect the use. The IP address of PC needs to be configured before it can communicate with the onboard computer of the robot through the switch.
 
 .. Signal transmission of the control program
 .. -------------------
@@ -26,7 +26,7 @@ The architecture of network framework of the Go1 robot is similar to that of the
 
 Add user computer to Robot Network
 -------------------
-In order to use unitree_guide, a feasible method is to copy the code to the robot's onboard computer, and then compile and run it. However, this process is relatively cumbersome, which is not conducive to frequent modification of debugging code. Another better method is to add the user computer to the robot network, communicate directly with the main control board, and send control commands.
+In order to use unitree_guide, a feasible method is to copy the code to the robot's onboard computer, and then compile and run it. However, this process is relatively cumbersome, which is not conducive to frequent modification of debugging code. Another better method is to add the user computer to the robot network, communicate directly with the main control board, then send control commands.
 Adding the user computer to the robot network is divided into two steps:First, use a network cable to connect the user computer and the switch of the robot.
 Second, configure the IP address of the network port of the user computer 
 run the following command to open the configuration file
@@ -51,8 +51,8 @@ Here are some useful network-related commands: ping, scp.
 
 ping
 ^^^^
-The function of the ping command is to test whether communication can be established with the specified IP address. 
-Here is an example for testing whether communication is established with main control board.
+The ping command is used to test whether communication can be established with the specified IP address. 
+Here is an example that testing whether communication is established with main control board.
 :: 
    ping 192.168.123.10 
 
