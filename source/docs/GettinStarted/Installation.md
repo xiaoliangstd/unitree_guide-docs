@@ -51,6 +51,8 @@ The meaning of this line is setting the unitree_guide to support the Go1 robot. 
 2. set(PLATFORM amd64): <br>
 The second line is to decide which platform the unitree_guide will run on, if it runs on a PC and the upboard of A1,  set(PLATFORM amd64). If it runs on the onboard computer of Go1, set(PLATFORM arm64).
 
+![catin_ws](../../images/GettinStarted/cmakeLists_2.gif)
+
 3. set(CATKIN_MAKE ON) : <br>
 The third line decides whether to use the Catkin_make compiler to compile unitree_guide. If unitree_guide runs on the real robot, the ros system is not installed on the real robot, so you must choose OFF, like set(CATKIN_MAKE OFF).
 
