@@ -37,6 +37,8 @@ file, which is at the beginning of CMakeLists.txt.
 1. set(ROBOT_TYPE Go1):   
 The meaning of this line is setting the unitree_guide to support the Go1 robot. Changing Go1 to A1 to support A1 robot, like set(ROBOT_TYPE A1). 
 
+![catin_ws](../../images/GettinStarted/cmakeLists_1.gif)
+
 2. set(PLATFORM amd64): <br>
 The second line is to decide which platform the unitree_guide will run on, if it runs on a PC and the upboard of A1,  set(PLATFORM amd64). If it runs on the onboard computer of Go1, set(PLATFORM arm64).
 
