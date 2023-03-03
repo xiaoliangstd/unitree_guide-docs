@@ -49,7 +49,7 @@ The meaning of this line is setting the unitree_guide to support the Go1 robot. 
 ![catin_ws](../../images/GettinStarted/cmakeLists_1.gif)
 
 2. set(PLATFORM amd64): <br>
-The second line is to decide which platform the unitree_guide will run on, if it runs on a PC and the upboard of A1,  set(PLATFORM amd64). If it runs on the onboard computer of Go1, set(PLATFORM arm64).
+The second line is to decide which platform the unitree_guide will run on, if it runs on a PC and the upboard of A1, set(PLATFORM amd64). If it runs on the onboard computer of Go1, set(PLATFORM arm64).
 
 ![catin_ws](../../images/GettinStarted/cmakeLists_2.gif)
 
@@ -99,6 +99,7 @@ For starting the controller, open an another terminal and switch to the same dir
 ```
 ./devel/lib/unitree_guide/junior_ctrl
 ```
+When the controller is successfully started, the FSM of the robot will automatically enter the passive state. Next, please refer to the fsm chapter to use.
 
 
 ### real 
@@ -123,7 +124,7 @@ And the executable files will be output to the bin folder. Go to the build folde
   cmake ..
   make     
 ```
-Then in the bin folder, execute the following command to run controller.
+Then in the bin folder, execute the following command to start controller.
 ```
  sudo ./junior_ctrl  
 ```
