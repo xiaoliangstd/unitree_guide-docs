@@ -99,7 +99,7 @@ For starting the controller, open an another terminal and switch to the same dir
 ```
 ./devel/lib/unitree_guide/junior_ctrl
 ```
-When the controller is successfully started, the FSM of the robot will automatically enter the passive state. Next, please refer to the fsm chapter to use.
+When the controller is successfully started, the FSM of the robot will automatically enter the passive state. Next, please refer to the FSM chapter to use.
 
 
 ### real 
