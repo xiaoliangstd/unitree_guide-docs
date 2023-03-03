@@ -16,15 +16,24 @@
 
 5. pthread<br>
 <font size=2>Run `getconf GNU_LIBPTHREAD_VERSION` command to test whether there is already this dependency</font>
+
 ### Package dependencies
 1. [unitree_guide](https://github.com/unitreerobotics/unitree_guide)
 2. [unitree_ros](https://github.com/unitreerobotics/unitree_ros)
 3. [unitree_legged_msgs](https://github.com/unitreerobotics/unitree_ros_to_real)<br>
 <font size=2>Note that: unitree_legged_real package should not be a part of dependencies</font>
 
+Download and put packages in the src folder of someone ROS workspace(catkin_ws here).
+
+![catin_ws](../../images/catin_ws.png)
+
+
 ## CMakeLists.txt
 The program of Unitree_guide supports many scenarios. To easily switch between these scenarios, we need to rely on conditional compilation. We can let the compiler to compile what we want with a simple setup. The settings for conditional compilation are in the [unitree_guide/CMakeLists.txt](https://github.com/unitreerobotics/unitree_guide/blob/main/unitree_guide/CMakeLists.txt) 
 file, which is at the beginning of CMakeLists.txt.
+
+![catin_ws](../../images/GettinStarted/cmakeLists.txt_setting.gif)
+
 ```
     set(ROBOT_TYPE Go1)        # Robot model,  supporting Go1 and A1
     set(PLATFORM amd64)        # Program compilation platform, supporting amd64 and arm64
@@ -57,30 +66,7 @@ This line determine whether open the MOVE_BASE, you can also use the OFF option 
 ## Build and Run
 ### simulation (gazebo)
 
-Download and put packages in the src folder of someone ROS workspace(catkin_ws here).
-
-![catin_ws](../../images/catin_ws.png)
-<center>
-<br>
-<div style="color:orange; border-bottom: 0.1px solid #d9d9d9;
-display: inline-block;
-color: #999;
-padding: 1px;">All the packages that you need to prepare in someone ros workspace</div>
-</center>
-<br>
-
-the readers should pay attention to CMakeLists.txt. Set the ROBOT_TYPE to your robot.
-And set SIMULATION to ON, REAL_ROBOT set to OFF.
-```
-    set(ROBOT_TYPE Go1)        
-    set(PLATFORM amd64)       
-    set(CATKIN_MAKE ON)       
-    set(SIMULATION ON)         
-    set(REAL_ROBOT OFF)       
-    set(DEBUG OFF)              
-    set(MOVE_BASE OFF)          
-```
-After configuring the CMakeLists.txt file, open a terminal and switch the directory to the ros workspace containing unitree_guide, then run the following command to build the project:
+Firstly configuring the CMakeLists.txt file, open a terminal and switch the directory to the ros workspace containing unitree_guide, then run the following command to build the project:
 
 ```
 catkin_make
