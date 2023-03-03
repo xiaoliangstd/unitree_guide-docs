@@ -23,7 +23,7 @@ In this state, each joint of the robot will gradually rotate to a given angle an
 
 FreeStand
 -------------------
-In this state, the robot can change the orientation and height of the body according to the command of the joystick or keyboard.
+In this state, the robot can change the orientation and height of the body according to the command from unitree joystick or keyboard.
 
 .. image:: ../../images/fsm/guide_freeStand.gif
 

@@ -56,6 +56,10 @@ Here is an example for testing whether communication is established with main co
 :: 
    ping 192.168.123.10 
 
+if the result similar to the figure shown below, it means that the communication has been established 
+
+.. image:: ../../images/network/guide_ping.gif
+
 ..     .. tab:: Introduction
         
 ..         The function of the ping command is to test whether communication can be established with the specified IP address. 
